@@ -6,7 +6,6 @@ export class NewsItem extends Component {
     let { title, description, urlToImage, url, source, publishedAt, author } =
       this.props.item;
 
-    console.log(publishedAt.slice(0, 10));
     return (
       <div className="col-md-4 col-sm-6 col-xxl-3 mb-4">
         <div className="card " style={{ position: "relative" }}>
@@ -23,7 +22,7 @@ export class NewsItem extends Component {
 
           <div className="card-body">
             <p className="card-text">
-              <small class="text-muted">
+              <small className="text-muted">
                 By {author ? author : "Unknown"} on {publishedAt}
               </small>
             </p>
@@ -33,11 +32,11 @@ export class NewsItem extends Component {
                 position: "absolute",
                 left: "0px",
                 top: "0px",
-                backgroundColor: "black",
+                backgroundColor: "blue",
                 color: "white",
                 fontSize: "12px",
                 padding: "2px 4px",
-                borderRadius: "2px",
+                borderRadius: "4px",
               }}
             >
               {source.name && source.name}
@@ -45,7 +44,7 @@ export class NewsItem extends Component {
 
             <h5 className="card-title">{title?.slice(0, 50)}...</h5>
             <p className="card-text">{description?.slice(0, 80)}...</p>
-            <Link to={`\\${url}`} target="_blank" className="btn btn-dark">
+            <Link to={url} target="_blank" className="btn btn-dark">
               Read more
             </Link>
           </div>
